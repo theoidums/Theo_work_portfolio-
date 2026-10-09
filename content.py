@@ -1,18 +1,7 @@
-# ============================================================
-# SITE IDENTITY
-# ============================================================
-# Edit this section for the information that identifies you
-# across the whole website.
-
 SITE = {
     "name": "STUDIO/NAME",
-    "role": "Multidisciplinary Artist & Mechanical Engineer",
-    "title": "Portfolio — 3D & 2D Artist / Mechanical Engineer",
-    "tagline": "Creative technology, visual storytelling, and mechanical design.",
-    "description": (
-        "Multidisciplinary portfolio covering 3D design, sculpting and animation, "
-        "2D illustration, storyboarding and animation, and mechanical design."
-    ),
+    "title": "Portfolio — 3D & 2D Artist",
+    "description": "3D and 2D art portfolio featuring modeling, sculpting, animation, illustration, concept art, and storyboarding.",
     "email": "hello@example.com",
     "phone": "+00 000 000 000",
     "location": "Available worldwide · Remote",
@@ -20,377 +9,181 @@ SITE = {
     "footer_name": "Your Name",
 }
 
-
-# ============================================================
-# HERO
-# ============================================================
-# heading_html can contain HTML because the template intentionally
-# renders it as markup. Keep the tags limited to the existing styles.
-
 HERO = {
-    "eyebrow": "Multidisciplinary creative",
-    "heading_html": 'I build worlds in <span class="stroke">3D</span> & <span class="accent">2D</span> —<br>engineered for precision.',
-    "subheading": (
-        "Multidisciplinary artist & mechanical engineer. From concept sculpts and "
-        "animation to production-ready CAD, I bridge creative storytelling with technical rigor."
-    ),
-    "primary_cta": {"text": "View my work →", "url": "#work"},
-    "secondary_cta": {"text": "Start a project", "url": "#contact"},
+    "heading_html": 'I create in <span class="stroke">3D</span> & <span class="accent">2D</span> —<br>built for visual storytelling.',
+    "subheading": "A visual artist working across 3D modeling, sculpting, animation, illustration, concept art, and storyboarding to turn ideas into polished visual work.",
+    "primary_text": "View my work →",
+    "secondary_text": "Start a project",
     "stats": [
-        {"number": "6+", "label": "Creative disciplines"},
-        {"number": "B.Eng", "label": "Mechanical Engineering"},
-        {"number": "2D+3D", "label": "Art & animation"},
+        {"number": "3D", "label": "Modeling & animation"},
+        {"number": "2D", "label": "Art & animation"},
+        {"number": "2", "label": "Core disciplines"},
     ],
 }
-
-
-# ============================================================
-# DISCIPLINES
-# ============================================================
 
 DISCIPLINES = [
     {
         "icon": "🧊",
         "title": "3D Art & Animation",
-        "description": (
-            "High-detail sculpting, hard-surface and organic modeling, rigging and "
-            "character/product animation built for film, games and visualization."
-        ),
-        "tags": ["Sculpting", "Modeling", "Texturing", "Rigging", "3D Animation"],
+        "description": "Modeling, sculpting, texturing, rigging, and animation for characters, props, environments, products, and visual storytelling.",
+        "tags": ["Modeling", "Sculpting", "Texturing", "Rigging", "3D Animation"],
     },
     {
         "icon": "✏️",
         "title": "2D Art & Animation",
-        "description": (
-            "Illustration, concept art and storyboarding through to frame-by-frame "
-            "and rigged 2D animation that gives ideas motion and narrative."
-        ),
-        "tags": ["Illustration", "Storyboarding", "Concept Art", "2D Animation"],
-    },
-    {
-        "icon": "⚙️",
-        "title": "Mechanical Design",
-        "description": (
-            "A Mechanical Engineering degree backing real product design — parametric "
-            "CAD, assemblies, drawings and design-for-manufacture."
-        ),
-        "tags": ["SolidWorks", "AutoCAD", "CAD", "DFM"],
+        "description": "Illustration, concept art, storyboarding, and 2D animation for developing ideas, defining visual direction, and telling stories.",
+        "tags": ["Illustration", "Concept Art", "Storyboarding", "2D Animation"],
     },
 ]
 
-
-# ============================================================
-# PORTFOLIO
-# ============================================================
-# Add/edit projects here. Every project has descriptive metadata so
-# the same content can later power cards, project pages, SEO metadata,
-# search, or an API without rewriting the portfolio.
-
+# Only two portfolio filters are used: 3D and 2D.
 PORTFOLIO_CATEGORIES = {
-    "3d": "3D Design",
-    "sculpt": "Sculpting",
-    "3danim": "3D Animation",
-    "illus": "Illustration",
-    "board": "Storyboarding",
-    "2danim": "2D Animation",
-    "mech": "Mechanical",
+    "3d": "3D",
+    "2d": "2D",
 }
 
+# Put project images in static/images/3d/ or static/images/2d/.
+# If image is empty, the gradient is used as the placeholder.
 WORKS = [
     {
-        "title": "Creature Bust — Sculpt",
-        "slug": "creature-bust-sculpt",
-        "category": "sculpt",
-        "description": "High-detail character sculpt demonstrating organic modeling and sculpting workflow.",
+        "title": "Creature Bust",
+        "slug": "creature-bust",
+        "category": "3d",
+        "description": "Character sculpt developed as a detailed 3D study.",
+        "tools": ["Blender", "ZBrush"],
+        "skills": ["Sculpting", "Character Art"],
         "image": "",
         "gradient": ["#ff5c38", "#a56bff"],
         "featured": True,
-        "tools": ["ZBrush", "Blender"],
-        "skills": ["Sculpting", "Organic Modeling", "Character Art"],
-        "links": {"github": "", "demo": "", "case_study": ""},
+        "links": {"project": "", "demo": ""},
     },
     {
-        "title": "Sci-Fi Prop — Hard Surface",
-        "slug": "sci-fi-prop-hard-surface",
+        "title": "Sci-Fi Prop",
+        "slug": "sci-fi-prop",
         "category": "3d",
-        "description": "Hard-surface 3D prop focused on clean forms, detail, materials and presentation.",
+        "description": "Hard-surface prop designed with a focus on form, detail, and presentation.",
+        "tools": ["Blender", "Substance 3D"],
+        "skills": ["Hard Surface", "Texturing"],
         "image": "",
         "gradient": ["#38b6ff", "#a56bff"],
         "featured": True,
-        "tools": ["Blender", "Substance"],
-        "skills": ["Hard Surface", "Modeling", "Texturing"],
-        "links": {"github": "", "demo": "", "case_study": ""},
+        "links": {"project": "", "demo": ""},
     },
     {
         "title": "Character Walk Cycle",
         "slug": "character-walk-cycle",
-        "category": "3danim",
-        "description": "Character animation study focused on rigging, timing, movement and performance.",
+        "category": "3d",
+        "description": "Character animation study focused on movement, timing, and performance.",
+        "tools": ["Blender"],
+        "skills": ["Rigging", "3D Animation"],
         "image": "",
         "gradient": ["#a56bff", "#ff5c38"],
-        "featured": True,
-        "tools": ["Blender"],
-        "skills": ["Rigging", "3D Animation", "Character Animation"],
-        "links": {"github": "", "demo": "", "case_study": ""},
-    },
-    {
-        "title": "Editorial Illustration",
-        "slug": "editorial-illustration",
-        "category": "illus",
-        "description": "Editorial illustration created to communicate an idea through composition and visual storytelling.",
-        "image": "",
-        "gradient": ["#ff5c38", "#ffb038"],
         "featured": False,
-        "tools": ["Photoshop", "Procreate"],
-        "skills": ["Illustration", "Concept Art", "Visual Storytelling"],
-        "links": {"github": "", "demo": "", "case_study": ""},
-    },
-    {
-        "title": "Short Film — Storyboard",
-        "slug": "short-film-storyboard",
-        "category": "board",
-        "description": "Storyboard sequence developed to plan camera direction, action, pacing and visual continuity.",
-        "image": "",
-        "gradient": ["#38b6ff", "#3ddc84"],
-        "featured": False,
-        "tools": ["Photoshop", "Storyboard Tools"],
-        "skills": ["Storyboarding", "Visual Development", "Pre-production"],
-        "links": {"github": "", "demo": "", "case_study": ""},
-    },
-    {
-        "title": "2D Animated Explainer",
-        "slug": "2d-animated-explainer",
-        "category": "2danim",
-        "description": "2D animation project translating a concept into a clear, engaging visual sequence.",
-        "image": "",
-        "gradient": ["#a56bff", "#38b6ff"],
-        "featured": False,
-        "tools": ["After Effects", "Photoshop"],
-        "skills": ["2D Animation", "Motion Design", "Visual Communication"],
-        "links": {"github": "", "demo": "", "case_study": ""},
-    },
-    {
-        "title": "Gearbox Assembly — SolidWorks",
-        "slug": "gearbox-assembly-solidworks",
-        "category": "mech",
-        "description": "Parametric gearbox assembly demonstrating mechanical design, assembly structure and CAD workflow.",
-        "image": "",
-        "gradient": ["#9aa4b2", "#38b6ff"],
-        "featured": True,
-        "tools": ["SolidWorks"],
-        "skills": ["Mechanical Design", "CAD", "Assemblies", "DFM"],
-        "links": {"github": "", "demo": "", "case_study": ""},
+        "links": {"project": "", "demo": ""},
     },
     {
         "title": "Stylized Environment",
         "slug": "stylized-environment",
         "category": "3d",
-        "description": "Stylized 3D environment exploring modeling, composition, materials and lighting.",
+        "description": "Stylized environment created to explore composition, modeling, materials, and atmosphere.",
+        "tools": ["Blender", "Substance 3D"],
+        "skills": ["Environment Art", "Materials"],
         "image": "",
         "gradient": ["#3ddc84", "#38b6ff"],
         "featured": False,
-        "tools": ["Blender"],
-        "skills": ["Environment Art", "Modeling", "Materials"],
-        "links": {"github": "", "demo": "", "case_study": ""},
+        "links": {"project": "", "demo": ""},
+    },
+    {
+        "title": "Editorial Illustration",
+        "slug": "editorial-illustration",
+        "category": "2d",
+        "description": "Illustration developed around a clear visual concept and editorial composition.",
+        "tools": ["Photoshop", "Procreate"],
+        "skills": ["Illustration", "Composition"],
+        "image": "",
+        "gradient": ["#ff5c38", "#ffb038"],
+        "featured": True,
+        "links": {"project": "", "demo": ""},
     },
     {
         "title": "Concept Character Sheet",
         "slug": "concept-character-sheet",
-        "category": "illus",
-        "description": "Character concept development showing visual exploration, silhouettes and design direction.",
+        "category": "2d",
+        "description": "Character exploration showing shape language, design variations, and visual direction.",
+        "tools": ["Photoshop", "Procreate"],
+        "skills": ["Concept Art", "Character Design"],
         "image": "",
         "gradient": ["#ff5c38", "#a56bff"],
         "featured": False,
-        "tools": ["Photoshop", "Procreate"],
-        "skills": ["Concept Art", "Character Design", "Illustration"],
-        "links": {"github": "", "demo": "", "case_study": ""},
+        "links": {"project": "", "demo": ""},
     },
     {
-        "title": "Product Render — 3D Design",
-        "slug": "product-render-3d-design",
-        "category": "3d",
-        "description": "Product-focused 3D design and rendering exercise emphasizing form, materials and presentation.",
+        "title": "Short Film Storyboard",
+        "slug": "short-film-storyboard",
+        "category": "2d",
+        "description": "Storyboard sequence developed to communicate shots, composition, action, and pacing.",
+        "tools": ["Photoshop", "Storyboard software"],
+        "skills": ["Storyboarding", "Visual Development"],
         "image": "",
-        "gradient": ["#38b6ff", "#ff5c38"],
+        "gradient": ["#38b6ff", "#3ddc84"],
         "featured": False,
-        "tools": ["Blender", "Substance"],
-        "skills": ["Product Visualization", "3D Modeling", "Rendering"],
-        "links": {"github": "", "demo": "", "case_study": ""},
+        "links": {"project": "", "demo": ""},
     },
     {
-        "title": "Bracket — AutoCAD Drawing",
-        "slug": "bracket-autocad-drawing",
-        "category": "mech",
-        "description": "Mechanical bracket drawing demonstrating technical drafting and dimensioning.",
+        "title": "2D Animated Explainer",
+        "slug": "2d-animated-explainer",
+        "category": "2d",
+        "description": "Short 2D animation focused on clear visual communication and motion.",
+        "tools": ["After Effects", "Photoshop"],
+        "skills": ["2D Animation", "Motion Design"],
         "image": "",
-        "gradient": ["#9aa4b2", "#a56bff"],
+        "gradient": ["#a56bff", "#38b6ff"],
         "featured": False,
-        "tools": ["AutoCAD"],
-        "skills": ["Technical Drawing", "Mechanical Design", "CAD"],
-        "links": {"github": "", "demo": "", "case_study": ""},
-    },
-    {
-        "title": "Fight Scene — Animatic",
-        "slug": "fight-scene-animatic",
-        "category": "board",
-        "description": "Action animatic exploring shot composition, timing, movement and sequence planning.",
-        "image": "",
-        "gradient": ["#ffb038", "#ff5c38"],
-        "featured": False,
-        "tools": ["Storyboard Tools", "After Effects"],
-        "skills": ["Storyboarding", "Animatics", "Action Planning"],
-        "links": {"github": "", "demo": "", "case_study": ""},
+        "links": {"project": "", "demo": ""},
     },
 ]
-
-
-# ============================================================
-# ABOUT
-# ============================================================
 
 ABOUT = {
-    "title": "Where art meets engineering",
+    "title": "Two disciplines, one visual language",
     "paragraphs": [
-        "I’m a multidisciplinary creative with a <strong>Mechanical Engineering degree</strong> and a deep passion for visual storytelling. That mix lets me think like an engineer and create like an artist — whether I’m sculpting a character, boarding a sequence, or dimensioning a part for production.",
-        "On the creative side I work across <strong>3D design, sculpting and animation</strong> as well as <strong>2D illustration, storyboarding and animation</strong>. On the technical side I bring <strong>SolidWorks, AutoCAD</strong> and solid mechanical design fundamentals to build things that actually work.",
+        "This portfolio brings together <strong>3D and 2D visual work</strong>, covering modeling, sculpting, animation, illustration, concept art, and storyboarding.",
+        "The focus is on creating clear, polished visuals that communicate an idea — from an individual character or prop to a complete sequence or visual concept.",
     ],
-    "creative": {"label": "🎨 Creative", "sub": "Vision & storytelling"},
-    "technical": {"label": "⚙️ Technical", "sub": "Precision & function"},
-    "cta": {"text": "Let’s work together", "url": "#contact"},
+    "creative_label": "🎨 3D",
+    "creative_sub": "Form & dimension",
+    "technical_label": "✏️ 2D",
+    "technical_sub": "Line & storytelling",
 }
 
-
-# ============================================================
-# SKILLS
-# ============================================================
-# Skill percentages are presentation values, not formal test scores.
-# Change or remove them depending on how you want to represent proficiency.
-
-SKILLS = [
-    {
-        "category": "Creative",
-        "items": [
-            {"name": "3D Modeling & Sculpting", "level": 95},
-            {"name": "3D Animation & Rigging", "level": 88},
-            {"name": "2D Illustration & Concept", "level": 92},
-            {"name": "Storyboarding", "level": 85},
-            {"name": "2D Animation", "level": 83},
-        ],
-        "tools": ["🧊 Blender", "🎺 ZBrush", "🎨 Substance", "✏️ Photoshop", "🖌️ Procreate", "🎬 After Effects"],
-    },
-    {
-        "category": "Engineering",
-        "items": [
-            {"name": "SolidWorks", "level": 90},
-            {"name": "AutoCAD", "level": 88},
-            {"name": "Mechanical Design", "level": 92},
-            {"name": "Design for Manufacture", "level": 82},
-            {"name": "Technical Drawing / GD&T", "level": 85},
-        ],
-        "tools": ["📐 SolidWorks", "📈 AutoCAD", "🔧 Fusion 360", "🖨️ 3D Printing", "📊 MATLAB"],
-    },
-]
-
-
-# ============================================================
-# SERVICES
-# ============================================================
+SKILLS = {
+    "3d": [
+        ("3D Modeling", 95),
+        ("Sculpting", 90),
+        ("Texturing", 85),
+        ("Rigging", 80),
+        ("3D Animation", 88),
+    ],
+    "3d_tools": ["🧊 Blender", "🎺 ZBrush", "🎨 Substance 3D"],
+    "2d": [
+        ("Illustration", 92),
+        ("Concept Art", 90),
+        ("Storyboarding", 85),
+        ("2D Animation", 83),
+        ("Motion Design", 80),
+    ],
+    "2d_tools": ["✏️ Photoshop", "🖌️ Procreate", "🎬 After Effects"],
+}
 
 SERVICES = [
-    {
-        "number": "01",
-        "title": "3D Modeling & Sculpting",
-        "description": "Characters, props, hard-surface and product models — game-ready or high-poly for cinematics and 3D print.",
-    },
-    {
-        "number": "02",
-        "title": "3D Animation",
-        "description": "Rigging, character performance and product motion for film, ads, explainers and real-time.",
-    },
-    {
-        "number": "03",
-        "title": "Illustration & Concept Art",
-        "description": "Editorial, character and environment illustration plus concept art to define a project’s look.",
-    },
-    {
-        "number": "04",
-        "title": "Storyboarding & 2D Animation",
-        "description": "From boards and animatics to finished frame-by-frame or rigged 2D animation.",
-    },
-    {
-        "number": "05",
-        "title": "Mechanical / Product Design",
-        "description": "Concept to CAD in SolidWorks & AutoCAD — parametric parts, assemblies, drawings and DFM.",
-    },
-    {
-        "number": "06",
-        "title": "Art + Engineering Consulting",
-        "description": "Design that is both beautiful and buildable — bridging creative direction and manufacturing reality.",
-    },
+    ("01", "3D Modeling & Sculpting", "Characters, props, environments, and product models from initial forms to polished final assets."),
+    ("02", "3D Animation", "Rigging, character movement, product motion, and animation for visual storytelling."),
+    ("03", "Illustration & Concept Art", "Illustration and concept development for characters, environments, editorial work, and visual direction."),
+    ("04", "Storyboarding & 2D Animation", "Boards, animatics, frame-by-frame animation, and motion work for communicating stories and ideas."),
 ]
-
-
-# ============================================================
-# EXPERIENCE
-# ============================================================
-# Optional for now. Add entries when you want the section displayed.
-
-EXPERIENCE = [
-    # {
-    #     "role": "Job Title",
-    #     "organization": "Company / Organization",
-    #     "period": "2025 — Present",
-    #     "description": "Short description of the role.",
-    #     "highlights": ["Achievement or responsibility", "Another achievement"],
-    # },
-]
-
-
-# ============================================================
-# EDUCATION
-# ============================================================
-
-EDUCATION = [
-    {
-        "qualification": "B.Eng. Mechanical Engineering",
-        "institution": "Institution Name",
-        "period": "Year — Year",
-        "description": "Mechanical engineering education supporting the technical side of the portfolio.",
-    },
-]
-
-
-# ============================================================
-# SOCIALS
-# ============================================================
 
 SOCIALS = [
-    {"name": "ArtStation", "url": "#"},
-    {"name": "Instagram", "url": "#"},
-    {"name": "LinkedIn", "url": "#"},
-    {"name": "YouTube", "url": "#"},
-    {"name": "Behance", "url": "#"},
+    ("ArtStation", "#"),
+    ("Instagram", "#"),
+    ("YouTube", "#"),
+    ("Behance", "#"),
 ]
-
-
-# ============================================================
-# CONTACT
-# ============================================================
-
-CONTACT = {
-    "title": "Let’s create\nsomething great.",
-    "description": (
-        "Have a project in mind — a model, an animation, an illustration set "
-        "or a part that needs designing? Reach out and let’s talk."
-    ),
-    "email": SITE["email"],
-    "phone": SITE["phone"],
-    "location": SITE["location"],
-    "form": {
-        "name_label": "Your name",
-        "email_label": "Your email",
-        "subject_label": "Project type (3D, 2D, CAD…)",
-        "message_label": "Tell me about your project…",
-        "submit_text": "Send message →",
-    },
-}

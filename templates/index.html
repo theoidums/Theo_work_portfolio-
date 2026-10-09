@@ -8,22 +8,22 @@
     <span class="hero-tag"><span class="pulse"></span> {{ site.availability }}</span>
     <h1>{{ hero.heading_html|safe }}</h1>
     <p class="hero-sub">{{ hero.subheading }}</p>
-    <div class="hero-cta"><a href="{{ hero.primary_cta.url }}" class="btn btn-primary">{{ hero.primary_cta.text }}</a><a href="{{ hero.secondary_cta.url }}" class="btn btn-ghost">{{ hero.secondary_cta.text }}</a></div>
+    <div class="hero-cta"><a href="#work" class="btn btn-primary">{{ hero.primary_text }}</a><a href="#contact" class="btn btn-ghost">{{ hero.secondary_text }}</a></div>
     <div class="hero-stats">{% for stat in hero.stats %}<div><div class="num accent">{{ stat.number }}</div><div class="lbl">{{ stat.label }}</div></div>{% endfor %}</div>
   </div>
 </section>
 
 <!-- DISCIPLINES -->
 <section class="section" id="disciplines"><div class="container">
-  <span class="eyebrow reveal">What I do</span><h2 class="sec-title reveal">Three worlds, one skillset</h2>
-  <p class="sec-lead reveal">A rare blend of artistic vision and engineering discipline — letting me take a project from imagination all the way to a manufacturable, animated reality.</p>
+  <span class="eyebrow reveal">What I do</span><h2 class="sec-title reveal">Two disciplines, one visual language</h2>
+  <p class="sec-lead reveal">A focused 3D and 2D practice covering modeling, sculpting, animation, illustration, concept art, and storyboarding.</p>
   <div class="disc-grid">{% for item in disciplines %}<div class="disc-card reveal"><div class="disc-ico">{{ item.icon }}</div><h3>{{ item.title }}</h3><p>{{ item.description }}</p><ul>{% for tag in item.tags %}<li>{{ tag }}</li>{% endfor %}</ul></div>{% endfor %}</div>
 </div></section>
 
 <!-- PORTFOLIO -->
 <section class="section" id="work" style="background:var(--bg-2)"><div class="container">
   <span class="eyebrow reveal">Selected work</span><h2 class="sec-title reveal">The portfolio</h2>
-  <p class="sec-lead reveal">Filter by discipline. Replace the placeholder tiles with your own renders, illustrations, animation reels and CAD screenshots.</p>
+  <p class="sec-lead reveal">Filter by discipline. Replace the placeholder tiles with your own 3D renders, 2D artwork, illustrations, storyboards, and animation stills.</p>
   <div class="filters reveal"><button class="filter-btn active" data-filter="all">All</button>{% for key, name in portfolio_categories.items() %}<button class="filter-btn" data-filter="{{ key }}">{{ name }}</button>{% endfor %}</div>
   <div class="gallery" id="gallery"></div>
 </div></section>
@@ -33,30 +33,29 @@
   <div class="about-visual reveal"><div class="fill">👨‍🎨</div></div>
   <div class="about-text reveal"><span class="eyebrow">About me</span><h2 class="sec-title">{{ about.title }}</h2>
     {% for p in about.paragraphs %}<p>{{ p|safe }}</p>{% endfor %}
-    <div class="bridge"><div class="side"><div class="t">{{ about.creative.label }}</div><div class="s">{{ about.creative.sub }}</div></div><div class="plus">+</div><div class="side"><div class="t">{{ about.technical.label }}</div><div class="s">{{ about.technical.sub }}</div></div></div>
-    <a href="{{ about.cta.url }}" class="btn btn-primary">{{ about.cta.text }}</a>
+    <div class="bridge"><div class="side"><div class="t">{{ about.creative_label }}</div><div class="s">{{ about.creative_sub }}</div></div><div class="plus">+</div><div class="side"><div class="t">{{ about.technical_label }}</div><div class="s">{{ about.technical_sub }}</div></div></div>
+    <a href="#contact" class="btn btn-primary">Let’s work together</a>
   </div>
 </div></div></section>
 
 <!-- SKILLS -->
 <section class="section" id="skills" style="background:var(--bg-2)"><div class="container"><span class="eyebrow reveal">Capabilities</span><h2 class="sec-title reveal">Skills & tools</h2>
 <div class="skills-grid">
-{% for category in skills %}
-  <div class="reveal"><h3 style="margin-bottom:24px">{{ category.category }}</h3>{% for skill in category.items %}<div class="skill-row"><div class="top"><span>{{ skill.name }}</span><span class="pct">{{ skill.level }}%</span></div><div class="bar"><span data-w="{{ skill.level }}%"></span></div></div>{% endfor %}<div class="tools">{% for tool in category.tools %}<span class="tool">{{ tool }}</span>{% endfor %}</div></div>
-{% endfor %}
+  <div class="reveal"><h3 style="margin-bottom:24px">3D</h3>{% for name,pct in skills["3d"] %}<div class="skill-row"><div class="top"><span>{{ name }}</span><span class="pct">{{ pct }}%</span></div><div class="bar"><span data-w="{{ pct }}%"></span></div></div>{% endfor %}<div class="tools">{% for tool in skills["3d_tools"] %}<span class="tool">{{ tool }}</span>{% endfor %}</div></div>
+  <div class="reveal"><h3 style="margin-bottom:24px">2D</h3>{% for name,pct in skills["2d"] %}<div class="skill-row"><div class="top"><span>{{ name }}</span><span class="pct">{{ pct }}%</span></div><div class="bar"><span data-w="{{ pct }}%"></span></div></div>{% endfor %}<div class="tools">{% for tool in skills["2d_tools"] %}<span class="tool">{{ tool }}</span>{% endfor %}</div></div>
 </div></div></section>
 
 <!-- SERVICES -->
 <section class="section" id="services"><div class="container"><span class="eyebrow reveal">How I can help</span><h2 class="sec-title reveal">Services</h2><div class="svc-grid">
-{% for service in services %}<div class="svc reveal"><div class="n">{{ service.number }}</div><div><h3>{{ service.title }}</h3><p>{{ service.description }}</p></div></div>{% endfor %}
+{% for n,title,description in services %}<div class="svc reveal"><div class="n">{{ n }}</div><div><h3>{{ title }}</h3><p>{{ description }}</p></div></div>{% endfor %}
 </div></div></section>
 
 <!-- CONTACT -->
 <section class="section contact" id="contact"><div class="container"><div class="contact-wrap">
-  <div class="reveal"><span class="eyebrow">Contact</span><h2>{{ contact.title|replace("\n", "<br>")|safe }}</h2><p style="color:var(--muted)">{{ contact.description }}</p>
-    <div class="contact-info"><a href="mailto:{{ contact.email }}"><span class="ico">✉️</span> {{ contact.email }}</a><a href="tel:{{ contact.phone }}"><span class="ico">📱</span> {{ contact.phone }}</a><a href="#"><span class="ico">📍</span> {{ contact.location }}</a></div>
+  <div class="reveal"><span class="eyebrow">Contact</span><h2>Let’s create<br>something great.</h2><p style="color:var(--muted)">Have a project in mind — a model, an animation, an illustration set or a part that needs designing? Reach out and let’s talk.</p>
+    <div class="contact-info"><a href="mailto:{{ site.email }}"><span class="ico">✉️</span> {{ site.email }}</a><a href="tel:{{ site.phone }}"><span class="ico">📱</span> {{ site.phone }}</a><a href="#"><span class="ico">📍</span> {{ site.location }}</a></div>
   </div>
-  <form class="reveal" id="contactForm" method="post" action="{{ url_for('contact') }}"><input type="text" name="name" placeholder="{{ contact.form.name_label }}" required><input type="email" name="email" placeholder="{{ contact.form.email_label }}" required><input type="text" name="subject" placeholder="{{ contact.form.subject_label }}"><textarea name="message" placeholder="{{ contact.form.message_label }}" required></textarea><button type="submit" class="btn btn-primary">{{ contact.form.submit_text }}</button><p id="formMsg" style="color:var(--accent);font-size:.9rem;{% if not form_message %}display:none{% endif %}">{{ form_message }}</p></form>
+  <form class="reveal" id="contactForm" method="post" action="{{ url_for('contact') }}"><input type="text" name="name" placeholder="Your name" required><input type="email" name="email" placeholder="Your email" required><input type="text" name="subject" placeholder="Project type (3D, 2D…)"><textarea name="message" placeholder="Tell me about your project…" required></textarea><button type="submit" class="btn btn-primary">Send message →</button><p id="formMsg" style="color:var(--accent);font-size:.9rem;{% if not form_message %}display:none{% endif %}">{{ form_message }}</p></form>
 </div></div></section>
 
 {% endblock %}

@@ -1,55 +1,87 @@
-# Portfolio Flask
+# Flask Portfolio
 
-A lightweight Flask conversion of the original one-page portfolio.
+A Flask conversion of the supplied single-file portfolio. The original visual language is retained: same colors, typography, spacing, responsive breakpoints, animations, hover effects, portfolio filters, mobile menu, skill bars, and section layout.
 
 ## Quick start
 
 ```bash
 python -m venv .venv
-```
-
-Windows PowerShell:
-
-```powershell
+# Windows PowerShell
 .venv\Scripts\Activate.ps1
+# macOS/Linux/WSL
+source .venv/bin/activate
+
 pip install -r requirements.txt
 python app.py
 ```
 
 Open `http://127.0.0.1:5000`.
 
-## Where to edit your portfolio
+For production locally:
 
-Start with:
-
-```text
-content.py
+```bash
+gunicorn app:app
 ```
 
-It contains structured sections for:
+## Where to edit things
 
-- site identity
-- hero
-- disciplines
-- projects
-- about
-- skills
-- services
-- experience
-- education
-- social links
-- contact
+- `content.py` — your text, portfolio items, skill percentages, services, contact details and social links.
+- `templates/index.html` — page structure/HTML.
+- `templates/partials/header.html` — navigation.
+- `templates/partials/footer.html` — footer.
+- `static/css/style.css` — styling.
+- `static/js/main.js` — interactions and animations.
+- `static/images/` — put your portfolio images here.
+- `app.py` — Flask routes/backend.
+- `render.yaml` — Render Blueprint.
 
-Put project images in:
+## Adding an image
 
-```text
-static/images/projects/
+Put the image in `static/images/`, then change a portfolio item in `content.py`:
+
+```python
+{"t": "My Creature", "c": "sculpt", "g": ["#ff5c38", "#a56bff"], "image": "/static/images/my-creature.jpg"}
 ```
 
-## Full guide
-
-See **[PROJECT_GUIDE.md](PROJECT_GUIDE.md)** for the complete file structure, content model, project/image instructions, local setup, and Render deployment workflow.
+If `image` is empty, the original gradient placeholder is used.
 
 ## Render
 
-The repository includes `render.yaml` for a Flask web service using Gunicorn.
+Commit the project to GitHub, then in Render choose **New > Blueprint** and select the repository containing `render.yaml`. Render will create the web service from the YAML.
+
+The Blueprint uses:
+
+- Python runtime
+- `pip install -r requirements.txt` build command
+- Gunicorn with `app:app`
+- `/health` health check
+- generated `SECRET_KEY`
+
+## Contact form
+
+The Flask route receives the form, but this starter does not send email or save submissions to a database. Implement that in `app.py` when you choose an email provider or database.
+
+## Architecture
+
+```text
+portfolio-flask/
+├── app.py
+├── content.py
+├── requirements.txt
+├── render.yaml
+├── README.md
+├── .gitignore
+├── templates/
+│   ├── base.html
+│   ├── index.html
+│   └── partials/
+│       ├── header.html
+│       └── footer.html
+└── static/
+    ├── css/
+    │   └── style.css
+    ├── js/
+    │   └── main.js
+    ├── images/
+    └── fonts/
+```

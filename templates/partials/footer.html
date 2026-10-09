@@ -1,8 +1,8 @@
 <footer>
   <div class="container">
     <div class="socials">
-      {% for social in socials %}<a href="{{ social.url }}" title="{{ social.name }}">{{ {'ArtStation':'🎨','Instagram':'📷','LinkedIn':'💼','YouTube':'▶️','Behance':'🖌️'}.get(social.name, '↗') }}</a>{% endfor %}
+      {% for label, href in socials %}<a href="{{ href }}" title="{{ label }}">{{ {'ArtStation':'🎨','Instagram':'📷','LinkedIn':'💼','YouTube':'▶️','Behance':'🖌️'}.get(label, '↗') }}</a>{% endfor %}
     </div>
-    <p>© <span id="yr"></span> {{ site.footer_name }} · 3D & 2D Artist · Mechanical Engineer. Built with passion.</p>
+    <p>© <span id="yr"></span> {{ site.footer_name }} · 3D & 2D Artist. Built with passion.</p>
   </div>
 </footer>
