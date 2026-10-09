@@ -1,5 +1,6 @@
 SITE = {
     "name": "STUDIO/NAME",
+    "role": "3D & 2D Artist",
     "title": "Portfolio — 3D & 2D Artist",
     "description": "3D and 2D art portfolio featuring modeling, sculpting, animation, illustration, concept art, and storyboarding.",
     "email": "hello@example.com",
@@ -187,3 +188,10 @@ SOCIALS = [
     ("YouTube", "#"),
     ("Behance", "#"),
 ]
+
+
+EXPERIENCE = [ ]
+
+EDUCATION = [ ]
+
+CONTACT = [ ]

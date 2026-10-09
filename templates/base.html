@@ -14,19 +14,19 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-  <script type="application/ld+json">
+<script type="application/ld+json">
   {{ {
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": site.name,
-    "jobTitle": site.role,
-    "description": site.description,
-    "email": site.email,
+    "name": site.get("name", ""),
+    "jobTitle": site.get("role", ""),
+    "description": site.get("description", ""),
+    "email": site.get("email", ""),
     "url": request.url_root,
-    "sameAs": socials | map(attribute="url") | list,
-    "knowsAbout": (disciplines | map(attribute="title") | list)
+    "sameAs": socials | selectattr("url", "defined") | map(attribute="url") | list,
+    "knowsAbout": disciplines | selectattr("title", "defined") | map(attribute="title") | list
   } | tojson }}
-  </script>
+</script>
 </head>
 <body>
 {% include 'partials/header.html' %}
