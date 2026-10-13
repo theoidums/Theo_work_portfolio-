@@ -2,19 +2,19 @@ from works import WORKS
 
 
 SITE = {
-    "name": "STUDIO/NAME",
+    "name": "David Okojie",
     "role": "3D & 2D Artist",
-    "title": "Portfolio — 3D & 2D Artist",
+    "title": "Portfolio, 3D & 2D Artist",
     "description": "3D and 2D art portfolio featuring modeling, sculpting, animation, illustration, concept art, and storyboarding.",
-    "email": "hello@example.com",
-    "phone": "+00 000 000 000",
+    "email": "bigdavokojie@gmail.com",
+    "phone": "+234 813 886 0484",
     "location": "Available worldwide · Remote",
     "availability": "Available for freelance & collaborations",
-    "footer_name": "Your Name",
+    "footer_name": "David Okojie",
 }
 
 HERO = {
-    "heading_html": 'I create in <span class="stroke">3D</span> & <span class="accent">2D</span> —<br>built for visual storytelling.',
+    "heading_html": 'I create in <span class="stroke">3D</span> & <span class="accent">2D</span>, <br>built for visual storytelling.',
     "subheading": "A visual artist working across 3D modeling, sculpting, animation, illustration, concept art, and storyboarding to turn ideas into polished visual work.",
     "primary_text": "View my work →",
     "secondary_text": "Start a project",
@@ -27,13 +27,13 @@ HERO = {
 
 DISCIPLINES = [
     {
-        "icon": "",
+        "icon": "images/icons/3d.ico",
         "title": "3D Art & Animation",
         "description": "Modeling, sculpting, texturing, rigging, and animation for characters, props, environments, products, and visual storytelling.",
         "tags": ["Modeling", "Sculpting", "Texturing", "Rigging", "3D Animation"],
     },
     {
-        "icon": "",
+        "icon": "images/icons/2d.ico",
         "title": "2D Art & Animation",
         "description": "Illustration, concept art, storyboarding, and 2D animation for developing ideas, defining visual direction, and telling stories.",
         "tags": ["Illustration", "Concept Art", "Storyboarding", "2D Animation"],

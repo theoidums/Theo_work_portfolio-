@@ -17,7 +17,7 @@
 <section class="section" id="disciplines"><div class="container">
   <span class="eyebrow reveal">What I do</span><h2 class="sec-title reveal">Two disciplines, one visual language</h2>
   <p class="sec-lead reveal">A focused 3D and 2D practice covering modeling, sculpting, animation, illustration, concept art, and storyboarding.</p>
-  <div class="disc-grid">{% for item in disciplines %}<div class="disc-card reveal"><div class="disc-ico">{{ item.icon }}</div><h3>{{ item.title }}</h3><p>{{ item.description }}</p><ul>{% for tag in item.tags %}<li>{{ tag }}</li>{% endfor %}</ul></div>{% endfor %}</div>
+  <div class="disc-grid">{% for item in disciplines %}<div class="disc-card reveal"><div class="disc-ico"><img src="{{ url_for('static', filename=item.icon) }}" alt="" aria-hidden="true"></div><h3>{{ item.title }}</h3><p>{{ item.description }}</p><ul>{% for tag in item.tags %}<li>{{ tag }}</li>{% endfor %}</ul></div>{% endfor %}</div>
 </div></section>
 
 <!-- PORTFOLIO -->
